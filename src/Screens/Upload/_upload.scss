@@ -1,0 +1,54 @@
+.main {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+
+  &_Container {
+    display: flex;
+    height: 600px;
+    width: 80%;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+    padding-top: 30px;
+  }
+
+  &_file-upload-wrapper {
+    max-width: 100%;
+    height: 200px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 4px dashed #009578;
+    border-radius: 10px;
+    margin: 15px;
+  }
+
+  &_selections {
+    margin-top: 10px;
+    button {
+      width: 200px;
+      height: 45px;
+      border-radius: 32px;
+      outline: none;
+      color: #fff;
+      background-image: linear-gradient(to right, #eb2b83, #c32b7b);
+      border: hidden;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.09em;
+    }
+  }
+
+  &_SelectContainer {
+    margin: 10px;
+  }
+}

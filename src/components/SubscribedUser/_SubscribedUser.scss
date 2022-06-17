@@ -1,0 +1,58 @@
+@import "../../_base.scss";
+
+.UserHorizontal {
+  border-bottom: 0.3px solid $border-color;
+  cursor: pointer;
+
+  &__left {
+    position: relative;
+    text-align: center;
+    padding-left: 0 !important;
+  }
+
+  &__ChannelPfp {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 0.3px;
+    @include Longnameclamp(2);
+  }
+  &__desc {
+    @include Longnameclamp(2);
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .videoHorizontal {
+    font-size: 0.8rem;
+
+    &__details {
+      @include Longnameclamp(1);
+    }
+    &__channel {
+      margin: 0.1rem 0;
+
+      img {
+        display: none;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    &__desc {
+      display: none;
+    }
+
+    &__title {
+      font-size: 0.9rem;
+      @include Longnameclamp(1);
+    }
+  }
+}

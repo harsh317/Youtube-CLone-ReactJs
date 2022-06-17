@@ -1,0 +1,98 @@
+@import "../../_base.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: $black-primary;
+  height: 10vh;
+  width: 100%;
+
+  &_menu {
+    display: none;
+  }
+  &_logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+    cursor: pointer;
+  }
+  form {
+    flex: 0.6;
+    display: flex;
+    margin: 0.1rem;
+    border-radius: 3px;
+    border: 1.2px solid;
+    background-color: $black-secondary;
+
+    input {
+      width: 90%;
+      height: 38px;
+      border: none;
+      font-weight: 500;
+      background: transparent;
+      color: $text-color;
+      padding: 0.3rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 0 1.25rem;
+      color: $text-color;
+      background: transparent;
+      border: none;
+
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  &_User_icons {
+    flex: 0.15;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .icon {
+      cursor: pointer;
+      &:hover {
+        color: gray;
+      }
+    }
+
+    img {
+      width: 40px;
+      border-radius: 50%;
+      object-fit: contain;
+      margin-left: 5px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .header {
+    padding: 1rem;
+
+    form {
+      flex: 0.8;
+    }
+
+    &_menu {
+      display: block;
+    }
+
+    &_logo {
+      display: none;
+    }
+
+    &_User_icons > *:not(img) {
+      display: none;
+    }
+  }
+}

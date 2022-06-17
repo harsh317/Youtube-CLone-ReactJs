@@ -1,0 +1,13 @@
+.LoginContainer {
+  width: 1100px;
+  margin: 0px auto;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+@media (max-width: 540px) {
+  .LoginContainer {
+    width: 100%;
+    margin: 0px;
+  }
+}

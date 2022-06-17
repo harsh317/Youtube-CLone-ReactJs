@@ -1,0 +1,212 @@
+@import "../../_base.scss";
+
+.video_container {
+  position: relative;
+  max-width: initial;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: #353946;
+
+  video {
+    width: 100%;
+  }
+
+  .scrubbing .thumbnail-img {
+    display: block;
+  }
+
+  &_controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+
+    .timeline-container {
+      height: 7px;
+      margin-inline: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      .video_container.scrubbing .preview-image,
+      &:hover .preview-image {
+        display: block;
+      }
+
+      .video_container.scrubbing .timeline,
+      &:hover .timeline {
+        height: 100%;
+
+        &::before {
+          display: block;
+        }
+
+        .video_container.scrubbing .thumb-indicator,
+        .thumb-indicator {
+          --scale: 1;
+        }
+      }
+
+      .timeline {
+        background-color: rgba(100, 100, 100, 0.5);
+        height: 3px;
+        width: 100%;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: calc(100% - var(--preview-position) * 100%);
+          background-color: rgb(150, 150, 150);
+          display: none;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: calc(100% - var(--progress-position) * 100%);
+          background-color: red;
+        }
+
+        .thumb-indicator {
+          --scale: 0;
+          position: absolute;
+          height: 200%;
+          top: -50%;
+          transform: translateX(-50%) scale(var(--scale));
+          left: calc(var(--progress-position) * 100%);
+          background-color: red;
+          border-radius: 50%;
+          transition: transform 150ms ease-in-out;
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 0.05rem;
+      padding: 0.25rem;
+      column-gap: 7px;
+
+      .duration_container {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        flex-grow: 1;
+      }
+
+      button.wide-btn {
+        width: 50px;
+      }
+
+      button {
+        background: none;
+        border: none;
+        color: inherit;
+        padding: 0;
+        width: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        opacity: 0.85;
+        transition: opacity 150ms ease-in-out;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+        width: 100%;
+        aspect-ratio: 6/1;
+        z-index: -1;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &:hover &_controls,
+  &:focus-within &_controls,
+  .paused &_controls {
+    opacity: 1;
+  }
+}
+
+.video_container.paused .pause-icon {
+  display: none;
+}
+
+.video_container.play .play-icon {
+  display: none;
+}
+
+.video_container.fullscreen .open {
+  display: none;
+}
+
+.video_container.notfullscreen .close {
+  display: none;
+}
+
+.volume-high,
+.volume-low,
+.volume-muted {
+  display: none;
+}
+
+.video_container[data-volume="high"] .volume-high {
+  display: block;
+}
+
+.video_container[data-volume="low"] .volume-low {
+  display: block;
+}
+
+.video_container[data-volume="muted"] .volume-muted {
+  display: block;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+
+  .volume-slider {
+    width: 0;
+    transition: width 150ms ease-in-out, transform 150ms ease-in-out;
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+
+  &:hover {
+    .volume-slider,
+    &:focus-within {
+      width: 100px;
+      transform: scaleX(1);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .video_container {
+    height: 70vh;
+  }
+}

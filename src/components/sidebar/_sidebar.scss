@@ -1,0 +1,38 @@
+@import "../../_base.scss";
+
+.Sidebaer_main {
+  background-color: $black-secondary;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 90vh;
+  padding-top: 2rem;
+  transition: 0.2s ease-in;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  hr {
+    background-color: $border-color;
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: $breakpoint-medium) {
+  .Sidebaer_main {
+    width: 90px;
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .Sidebaer_main {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 999;
+  }
+}

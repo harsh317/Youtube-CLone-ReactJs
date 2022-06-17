@@ -1,0 +1,28 @@
+@import "../../_base.scss";
+
+.SidebarRow {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  margin: 0.2rem 0;
+  cursor: pointer;
+
+  span {
+    margin-left: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+  }
+
+  &:hover {
+    background-color: $border-color;
+  }
+}
+
+@media (max-width: $breakpoint-medium) {
+  .SidebarRow {
+    span {
+      display: none;
+    }
+  }
+}
