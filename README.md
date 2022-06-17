@@ -1,70 +1,31 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://user-images.githubusercontent.com/66161239/174223153-c614acd5-0af5-4305-b1fb-03d7de39e455.mp4
 
-## Available Scripts
+An exact clone of youtube with all functionalities from View count to Subscribe to everything (Without Youtube Api) Using Firebase, FFmpeg, And React
 
-In the project directory, you can run:
+As seen from the video, You Can probably tell that UI is not too bad too, In the project I tried to focus on every part (as it was my 1st coding project after a long time). I made the app fully responsive, Animations can be seen, And Here are the additional features I forgor to tell in the video:
 
-### `npm start`
+# Features
+1. Animation And Ui
+2. **And Good Authentication System (Forgot password, Reset Password, Email Verification System)** For eg You can pass a `emailVerified` property in your `ProtectedRoute` Component something like this on any page you want:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![1_Ys-Kn04qpvt4I7On8M0wWQ](https://user-images.githubusercontent.com/66161239/174223638-f785044b-743c-4ad2-a30c-a44d8b38f03b.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **View Count System Based On your Ip**: Views are counted per 1 IP. So, that doesn’t result in an extra view when you refresh Your page. You can use any library/api to get Ip but I am using the following Api:
 
-### `npm test`
+![1_r_2dOetJIxAHBlQnI4w6ng](https://user-images.githubusercontent.com/66161239/174223856-933c6d37-6d62-40b3-a41a-c6bbb115fd7d.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Search Functionality** (You can Search Videos on the header based on a video’s title (Not tags) )
+5. **Get Related Videos Based On Tags**(The Related Side videos on the watch screen and on the home screen are fetched based on the tags you upload when you upload a video…)
+6. **Publicity Functionality** (Make Your video Public or Private (You can edit it later too) )
+7. **Subscribe Your Favorite Creator and Like/Dislike and Comment Functionality** (quite self-explanatory bruh)
+8. **An Video Owner Can edit his Video** (Only a video owner can edit his video and change the visibility or other things of videos)
+9. **Generate Thumbnails For Your video Using FFmpeg** (After Uploading Video, The app automatically generated thumbnails for your video, and the thumbnails and videos are stored in your server like this: )
 
-### `npm run build`
+![1_mAshKIxdl_-_7xP0gS4BrA](https://user-images.githubusercontent.com/66161239/174224075-c80541cf-fb5c-47ac-829e-a1476253d69c.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+9. **Strong and some advanced Firebases Rules** (I pretty much wasted a whole day on making good firebase rules but at last it was worthy)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![1_6duLaRXfiJKYljePdHOSEA](https://user-images.githubusercontent.com/66161239/174224122-22df9f79-0017-4701-8f3e-6d74a1b52c12.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
